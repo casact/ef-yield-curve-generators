@@ -1,1 +1,1 @@
-# ef_yield_curve_generators
+This repository contains code associated with the paper "Building and Testing Yield Curve Generators for P&C Insurance". This paper will soon appear in the Casualty Actuarial Society's [E-Forum](https://www.casact.org/pubs/forum/) publication.
