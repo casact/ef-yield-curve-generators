@@ -2,9 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-setwd("~/OneDrive/R/ESG/publish")
-library(readxl)  # allows reading excel files; assumes there is a header row
-library("loo")
+library(loo)
 library(rstan)
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
@@ -12,8 +10,7 @@ options(mc.cores = parallel::detectCores())
 
 ts <- (c(1,2,3,5,7,10,20,30)) #the maturities
 opy = 1461/28   # observations per year, 1461 weeks in 28 years here
-y <- as.matrix(read_excel('us_01_05_18_to_10_04_19.xlsx')) 
-#rates by week, with header row
+y <- as.matrix(read.csv('us_01_05_18_to_10_04_19.csv')) #rates by week, with header row
 N <- nrow(y)
 U <- ncol(y)
 c(N,U)  #will feed this to Stan so Stan code can be more general:
